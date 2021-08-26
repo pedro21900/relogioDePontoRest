@@ -26,7 +26,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	implementation 'com.h2database:h2'
-
+	compileOnly "joda-time:joda-time:2.2"
 	compileOnly group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	compileOnly group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 	compileOnly group: 'io.springfox', name: 'springfox-bean-validators', version: '2.9.2'
@@ -44,5 +44,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-task stage(dependsOn: ['build', 'clean'])
+task stage(dependsOn: ['build', 'clean','bootRun'])
 build.mustRunAfter clean
