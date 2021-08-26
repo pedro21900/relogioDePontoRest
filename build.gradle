@@ -44,5 +44,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
-task stage(dependsOn: [ 'clean'])
+task stage(dependsOn: [ ])
 build.mustRunAfter clean
