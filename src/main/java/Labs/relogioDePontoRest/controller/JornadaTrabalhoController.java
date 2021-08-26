@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/jornada")
+@RequestMapping("/api/v1")
 public class JornadaTrabalhoController {
 
     @Autowired
