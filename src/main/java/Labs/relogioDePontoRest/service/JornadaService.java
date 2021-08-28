@@ -1,6 +1,7 @@
 package Labs.relogioDePontoRest.service;
 
 import Labs.relogioDePontoRest.model.JornadaDeTrabalho;
+import Labs.relogioDePontoRest.model.MenssagemDTO;
 import Labs.relogioDePontoRest.repository.JornadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,8 +19,12 @@ public class JornadaService {
         this.jornadaRepository = jornadaRepository;
     }
 
-    public JornadaDeTrabalho saveJornada(JornadaDeTrabalho jornadaDeTrabalho) {
-        return jornadaRepository.save(jornadaDeTrabalho);
+    public MenssagemDTO saveJornada(JornadaDeTrabalho jornadaDeTrabalho) {
+       JornadaDeTrabalho jornadaDeTrabalhoSaved=jornadaRepository.save(jornadaDeTrabalho);
+
+        return MenssagemDTO.builder()
+                .mensage("Create jornada de trabalho id "+ jornadaDeTrabalhoSaved.getId())
+                .build();
     }
     public JornadaDeTrabalho updateJornada(JornadaDeTrabalho jornadaDeTrabalho) {
         return jornadaRepository.save(jornadaDeTrabalho);
